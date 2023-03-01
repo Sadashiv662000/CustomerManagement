@@ -18,7 +18,7 @@ public class CustomerJdbc
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/palle", "root", "admin");
-			String qry="insert into customer values(?,?,?,?,?)";
+			String qry="insert into customer(cname, Cage, Cemail, cpassword) values(?,?,?,?,?)";
 			ps=con.prepareStatement(qry);
 			ps.setInt(1, c.getCid());
 			ps.setString(2, c.getCname());
